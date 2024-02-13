@@ -1,0 +1,134 @@
+\chapter{Практические задания}
+
+\section{Задание 1}
+Представить следующие списки в виде списочных ячеек:
+\begin{enumerate}
+	\item '(open close halph)
+	\includeimage
+	{1.1}
+	{f}
+	{H}
+	{.8\textwidth}
+	{}
+	\item '((open1) (close2) (halph3))
+	\includeimage
+	{1.2}
+	{f}
+	{H}
+	{.9\textwidth}
+	{}
+	\item '((one) for all (and (me (for you))))
+	\includeimage
+	{1.3}
+	{f}
+	{H}
+	{.9\textwidth}
+	{}
+	\item '((TOOL)(call))
+	\includeimage
+	{1.4}
+	{f}
+	{H}
+	{.6\textwidth}
+	{}
+	\item '((TOOL1)((call2))((sell)))
+	\includeimage
+	{1.5}
+	{f}
+	{H}
+	{.9\textwidth}
+	{}
+	\clearpage
+	\item '(((TOOL)(call))((sell)))
+	\includeimage
+	{1.6}
+	{f}
+	{H}
+	{.9\textwidth}
+	{}
+\end{enumerate}
+
+\section{Задание 2}
+Используя только функции CAR и CDR написать выражения, возвращающие:
+\begin{enumerate}
+	\item второй;
+	\includelistingpretty
+	{1.lisp}
+	{lisp}
+	{}
+	
+	\item третий;
+	\includelistingpretty
+	{2.lisp}
+	{lisp}
+	{}
+	
+	\item четвертый.
+	\includelistingpretty
+	{3.lisp}
+	{lisp}
+	{}
+\end{enumerate}
+
+\section{Задание 3}
+Что будет в результате вычисления выражений?
+\begin{enumerate}
+	\item (CAADR '((blue cube) (red pyramid)));
+	
+	red
+	\item (CDAR '((abc) (def) (ghi)))
+	
+	nil
+	\item (CADR '((abc) (def) (ghi)))
+	
+	(def)
+	\item (CADDR '((abc) (def) (ghi)))
+	
+	(ghi)
+\end{enumerate}
+
+\section{Задание 4}
+Напишите результат вычисления выражений и объясните как он получен:
+\includelistingpretty
+{4.lisp}
+{lisp}
+{}
+
+\section{Задание 5}
+Написать лямбда-выражения и соответствующую функцию:
+\begin{itemize}
+	\item функция (f ar1 ar2 ar3 ar4), возвращающая ((ar1 ar2)(ar3 ar4));
+	\includelistingpretty
+	{func1.lisp}
+	{lisp}
+	{}
+	\includeimage
+	{5.1}
+	{f}
+	{H}
+	{.9\textwidth}
+	{}
+	\item функция (f ar1 ar2), возвращающая ((ar1)(ar3));
+	\includelistingpretty
+	{func2.lisp}
+	{lisp}
+	{}
+	\includeimage
+	{5.2}
+	{f}
+	{H}
+	{.6\textwidth}
+	{}
+	\clearpage
+	\item функция (f arl), возвращающая (((arl)));
+	\includelistingpretty
+	{func3.lisp}
+	{lisp}
+	{}
+	\includeimage
+	{5.3}
+	{f}
+	{H}
+	{.4\textwidth}
+	{}
+\end{itemize}
