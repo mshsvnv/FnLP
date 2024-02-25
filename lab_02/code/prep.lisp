@@ -15,4 +15,4 @@
 ;; )
 
 ;; (print(longer_than '(1 2) '(1 2 3)))
-(print (apply #max '(1 2)))
+(print (car (list 'one 'two)))
