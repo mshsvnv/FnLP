@@ -1,211 +1,80 @@
 \chapter{Практические задания}
 
 \section{Задание 1}
-\includeimage
-{1}
-{f}
-{H}
-{.8\textwidth}
+Написать функцию, которая принимает целое число и возвращает первое четное число, не меньшее аргумента.
+
+\includelistingpretty
+{1.lisp}
+{lisp}
 {}
 
-\clearpage
-
 \section{Задание 2}
-Написать функцию, вычисляющую гипотенузу прямоугольного треугольника по заданным катетам и составить диаграмму ее вычисления.
+Написать функцию, которая принимает число и возвращает число того же знака, но с модулем на 1 больше модуля аргумента.
 
 \includelistingpretty
 {2.lisp}
 {lisp}
 {}
 
-\includeimage
-{2}
-{f}
-{H}
-{.8\textwidth}
+\section{Задание 3}
+Написать функцию, которая принимает два числа и возвращает список из этих чисел, расположенных по возрастанию.
+
+\includelistingpretty
+{3.lisp}
+{lisp}
 {}
 
 \clearpage
 
-\section{Задание 3}
-Каковы результаты вычисления следующих выражений? (объяснить возможную ошибку и варианты ее устранения)
-
-\begin{itemize}
-	\item \texttt{(list 'a c)}
-	
-	Ошибка, т.к. С не самовичисляема. 
-	
-	Исправление: \texttt{(list 'a 'c)}. 
-	
-	Ответ: \texttt{(A C)}
-	
-	\item \texttt{(cons 'a (b c))}
-	
-	Ошибка, т.к. попытается вычислить \texttt{(b c)}. 
-	
-	Исправление: \texttt{(cons 'a '(b c))}. 
-	
-	Ответ: \texttt{(A B C)}
-	
-	\item \texttt{(cons 'a '(b c))}
-	
-	Ответ: \texttt{(A B C)}
-	\item \texttt{(caddr (1 2 3 4 5))}
-	
-	Ошибка, т. к. \texttt{(1 2 3 4 5)} надо представить как список, т. е. \texttt{'(1 2 3 4 5)}.
-	
-	Ответ: \texttt{3}
-	
-	\item \texttt{(cons 'a 'b 'c)}
-	
-	Ошибка, т. к. \texttt{(cons)} принимает только 2 аргумента.
-	
-	Исправление: \texttt{(cons 'a '(b c))}
-	
-	Ответ: \texttt{(A B C)}
-		
-	\item \texttt{(list 'a (b c))}
-	
-	Ошибка, т. к. список \texttt{(b c)} надо представить как \texttt{'(b c)}.
-	
-	Исправление \texttt{(list 'a '(b c))}
-	
-	Ответ: \texttt{(A (B C))}
-	
-	\item \texttt{(list a '(b c))}
-	
-	Ошибка, т. к. \texttt{a} надо представить как \texttt{'a}.
-	
-	Исправление: \texttt{(list 'a '(b c))}
-	
-	Ответ: \texttt{(A (B C))}
-	
-	\item \texttt{(list (+ 1 '(length '(1 2 3))))}
-	
-	Ошибка, т. к. \texttt{'(length '(1 2 3))} не является числом.
-	
-	Исправление: \texttt{(list (+ 1 (length '(1 2 3))))}
-	
-	Ответ: \texttt{(4)}
-\end{itemize}
-
 \section{Задание 4}
-Написать функцию longer\_then от двух списков-аргументов, которая возвращает Т, если первый аргумент имеет большую длину.
+Написать функцию, которая принимает три числа и возвращает Т только тогда, когда первое число расположено между вторым и третьим.
+
+\includelistingpretty
+{4.lisp}
+{lisp}
+{}
+
+\section{Задание 5}
+Каков результат вычисления следующих выражений?
 
 \includelistingpretty
 {5.lisp}
 {lisp}
 {}
 
-\section{Задание 5}
-Каковы результаты вычисления следующих выражений:
-
-\begin{itemize}
-	\item \texttt{(cons 3 (list 5 6))}
-	
-	Ответ: \texttt{(3 5 6)}
-	
-	\item \texttt{(list 3 'from 9 'lives (- 9 3)))}
-	
-	Ответ: \texttt{(3 FROM 9 LIVES 6)}
-	
-	\item \texttt{(+ (length for 2 too))(car '(21 22 23)))}
-	
-	Исправление: \texttt{(+ (length '(for 2 too))(car '(21 22 23)))}
-	
-	Ответ: ошибка \ 24
-	
-	\item \texttt{(cdr '(cons is short for ans))}
-	
-	Ответ: \texttt{(IS SHORT FOR ANS)}
-	
-	\item \texttt{(cons 3 '(list 5 6))}
-	
-	Ответ: \texttt{(3 LIST 5 6)}
-	
-	\item \texttt{(car (list 'one 'two))}
-	
-	Ответ: ONE
-\end{itemize}
-
 \section{Задание 6}
+Написать предикат, который принимает два числа-аргумента и возвращает Т, если первое число не меньше второго.
 
-Дана функция~\ref{lst:7.lisp}. Какие результаты вычисления следующих выражений?
+\includelistingpretty
+{6.lisp}
+{lisp}
+{}
+
+\clearpage
+
+\section{Задание 7}
+Какой вариант из следующих двух вариантов предиката ошибочен и почему?
 
 \includelistingpretty
 {7.lisp}
 {lisp}
 {}
 
-\begin{itemize}
-	\item \texttt{(mystery (one two))}
-	
-	Исправление: \texttt{(mystery '(one two))} 
-	
-	Ответ: (TWO ONE)
-	
-	\item \texttt{(mystery (last one two))}
-	
-	Исправление: \texttt{(mystery '(last one two))} 
-	
-	Ответ: (ONE LAST)
-	
-	\item \texttt{(mystery free))}
-	
-	Исправление: \texttt{(mystery '(free))} 
-	
-	Ответ: (NIL FREE)
-	
-	\item \texttt{(mystery one 'two))}
-	
-	Исправление: \texttt{(mystery '(one two))} 
-	
-	Ответ: (TWO ONE)
-\end{itemize}
+Ошибочным является \texttt{pred2}, так как сначала происходит проверка на положительность аргумента, а только потом является ли его аргумент числовым атомом.
 
-\section{Задание 7}
-Написать функцию, которая переводит температуру в системе Фаренгейта температуру по Цельсию (defun f-to-c (temp)...).
-
-Формулы: c = 5/9 * (f - 32.0); f = 9/5 * c + 32.0.
-
-Как бы назывался роман Р.Брэдбери "+451 по Фаренгейту" в системе по Цельсию?
+\section{Задание 8}
+Решить задачу 4, используя для ее решения конструкции: только IF, только COND, только AND/OR.
 
 \includelistingpretty
 {8.lisp}
 {lisp}
 {}
 
-\section{Задание 8}
-Что получится при вычисления каждого из выражений?
+\section{Задание 9}
+Переписать функцию \texttt{how-alike}, приведенную в лекции и использующую COND, используя только конструкции IF, AND/OR.
 
-\begin{itemize}
-		\item \texttt{(list 'cons t NIL)}
-		
-		Ответ: \texttt{(CONS T NIL)}
-		
-		\item \texttt{(eval (eval (list 'cons t NIL)))}
-		
-		Ответ: ошибка
-		
-		\item \texttt{(eval (list 'cons t NIL))}
-		
-		Ответ: (T)
-		
-		\item \texttt{(apply \#cons ''(t Nil)}
-		
-		Исправление: \texttt{(apply \#'cons '(t Nil)}
-		
-		Ответ: \texttt{(T)}
-		
-		\item \texttt{(list 'eval NIL)}
-		
-		Ответ: \texttt{(EVAL NIL)}
-		
-		\item \texttt{(eval NIL)}
-		
-		Ответ: \texttt{NIL}
-		
-		\item \texttt{(eval (list 'eval NIL))}
-		
-		Ответ: \texttt{(NIL)}
-\end{itemize}
+\includelistingpretty
+{9.lisp}
+{lisp}
+{}
+
