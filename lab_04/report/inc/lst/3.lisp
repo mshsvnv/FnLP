@@ -1,6 +1,17 @@
-(defun f (x y)
-    (cond ((< x y) (cons x (cons y Nil)))
-          (t (cons y (cons x Nil))      ) ) )
+(defun last_1 (lst)
+    (last lst)
+)
 
-(print (f 1 2)) ;; 1 2
-(print (f 2 1)) ;; 2 1
+(defun last_2 (lst)
+    (cond ((null lst) Nil)
+          (t (cons (car (reverse lst)) Nil))
+    )
+)
+
+(defun last_3 (lst)
+    (cond ((cdr lst) (last_3 (cdr lst)))
+          ((cond ((null lst) Nil)
+                 (t (cons (car lst) Nil)))
+          )
+    )
+)

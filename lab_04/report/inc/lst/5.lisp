@@ -1,7 +1,11 @@
-(print (and 'fee 'fie 'foe)        ) ;; FOE
-(print (or nil 'fie 'foe)          ) ;; FIE
-(print (and (equal 'abc 'abc) 'yes)) ;; YES
 
-(print (or 'fee 'fie 'foe)         ) ;; FEE
-(print (and nil 'fie 'foe)         ) ;; Nil
-(print (or (equal 'abc 'abc) 'yes) ) ;; T
+(defun get_middle (lst x)
+    (cond ((null lst) lst)
+          ((null (cdr lst)) (cons x Nil))
+          (t (cons (car lst) (get_middle (cdr lst) x)))
+    )
+)
+
+(defun swap (lst) 
+    (cons (car (last lst)) (get_middle (cdr lst) (car lst)))
+)

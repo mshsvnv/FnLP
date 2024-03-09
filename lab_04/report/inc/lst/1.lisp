@@ -1,6 +1,6 @@
-(defun f (x)
-    (cond ((oddp x) (+ x 1))
-          (t x             ) ) )
+(setf lst1 '(a b c))
+(setf lst2 '(d e))
 
-(print (f 1)) ;; 2
-(print (f 4)) ;; 4
+(print (cons lst1 lst2))   ;; ((A B C) D E)
+(print (list lst1 lst2))   ;; ((A B C) (D E))
+(print (append lst1 lst2)) ;; (A B C D E)

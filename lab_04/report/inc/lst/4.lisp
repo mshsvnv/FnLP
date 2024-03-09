@@ -1,9 +1,8 @@
-(defun f (x y z)
-    (cond ((> x y) (< x z))
-          ((< z x) (< x y)) ) )
+(defun no_last_1 (lst)
+    (reverse (cdr (reverse lst)))
+)
 
-(print (f 0 -1 1)) ;; T
-(print (f 0 1 -1)) ;; T
-(print (f 0 0 0))  ;; Nil
-(print (f 1 1 0))  ;; Nil
-(print (f 0 1 0))  ;; Nil
+(defun no_last_2 (lst)
+    (cond ((null (cdr lst)) Nil)
+          (t (cons (car lst) (no_last_2 (cdr lst)))))
+)
