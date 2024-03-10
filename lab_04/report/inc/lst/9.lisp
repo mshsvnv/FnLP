@@ -1,6 +1,6 @@
 (defun mul (lst x)
     (cond ((null lst) Nil)
           ((numberp (car lst)) (cons (* (car lst) x) (cdr lst)))
-          (t (cons (car lst) (mul_any (cdr lst) x)))
+          (t (cons (car lst) (mul (cdr lst) x)))
     )
 )
