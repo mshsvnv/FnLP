@@ -1,48 +1,65 @@
-(defun roll_dice ()
-    ( setf *random-state* (make-random-state t))
-    (+ (random 6) 1)
-)
+;; числа Фиобонначи
+
+;; Сформировать S-выр. кот. по номеру операции 
+;; (арифм.) и списку аргументов (чисел, с кот. надо вып. действия) 
+;; определяет результат применения операции к заданному списку.
+
+;; Использовать только 2 симв. атома — а и б, 
+;; при этом в S-выр. можно исп. только а.
+
+;; defvar, set, setf 
+
+;; (setf b '(+ - * /))
+;; (setf a 'b)
+;; (defun b (n) (nth n b))
+;; (defun a (n lst) (apply (b n) lst))
+
+;; (defun test (a b) 1)
+
+;; (defvar test 5)
+;; (defun test () 2)
+
+;; (print (test))
+;; (print (cons (test) Nil))
+
+;; (setf b '(+ - * /))
+;; (setf a b)
+;; (defun b (n lst)
+;;   (apply (nth n a) lst))
 
 
-(print (roll_dice))
+(defvar lst '(+ 1 2 3))
 
-(defun firstPlayer ()
-    (setf firstCube (roll_dice))
-    (setf secondCube (roll_dice))
-    (setf firstSum (+ firstCube secondCube))
-    (setf result 0)
+(print (eval lst))
 
-    (print (list 'Игрок 1 'получил (list firstCube secondCube)))
 
-    (if (or (eq firstSum 7) (eq firstSum 11))
-        (setf result 1) 
 
-        (if (or (and (eq firstCube 6) (eq secondCube 6))
-                (and (eq firstCube 1) (eq secondCube 1)))
+;; (defvar lst '(1 2 3 4))
 
-            (and (print (list 1 'игрок 'перебрасывает))
-                (firstPlayer))
-                NIL
-        )
-    )
-)
+;; (print (nth 0 lst))
+;; (print (last lst))
+;; (print (reverse lst))
+;; (print (append lst (reverse lst)))
 
-(defun secondPlayer ()
-    (setf firstCube (roll_dice))
-    (setf secondCube (roll_dice))
-    (setf secondSum (+ firstCube secondCube))
-    
 
-)
+;; ;; приколы 
+;; (defun x () 9)
+;; (defvar x 'y)
+;; (defvar y 'x)
+;; (defun y () 7)
 
-(defun game ()
-    (firstPlayer)
-    (if (eql result 1)
-        (print (list 1 'игрок 'победил))
-        (and (print (list 'Ход 'переходит 'ко 2 'игроку))
-            (secondPlayer)
-        )
+;; (print (funcall (eval x)))  ;; 9
+;; (print (funcall (eval 'y))) ;; 9
 
-            ))
+;; (print (funcall 'x))        ;; 9
+;; (print (funcall x))         ;; 7
 
-(game)
+;; (print (funcall 'y))        ;; 7
+;; (print (funcall y))         ;; 9
+
+;; (write-line "")
+
+;; (print (+ 2 3))
+;; (print '(+ 2 3))
+;; (print (eval (+ 2 3)))
+;; (print (eval '(+ 2 3)))

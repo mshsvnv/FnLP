@@ -1,0 +1,10 @@
+(defun f (lst n)
+    (cond ((null lst) n)
+          ((listp (car lst)) (f (car lst) n))
+          (t (f (cdr lst) (+ n 1)))
+    )
+)
+
+(defun list-of-list(lst)
+    (f lst 0)
+)

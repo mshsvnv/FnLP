@@ -1,0 +1,20 @@
+;; (setf b '(* + cons append))
+;; (setf a b)
+
+(defvar b '(* + cons append))
+(defvar a b)
+
+(defun f (lst)
+    (cond ((not (numberp (car lst))) 
+                                    (funcall (cadddr a) lst Nil))
+          ((< 0 (car lst)) 
+                                    (mapcar #'(lambda (x) 
+                                                      (funcall (cadr b) x 2)) 
+                                            lst))  
+          (t (mapcar (car a) lst lst))    
+    )
+)
+
+(print (f '(2 2 5 7 8 9 0)))
+(print (f '(-1 2 3)))
+(print (f '('1 2 3)))
