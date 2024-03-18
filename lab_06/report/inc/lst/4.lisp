@@ -1,0 +1,7 @@
+(defun mul (lst n)
+    (cond ((null lst) Nil)
+          ((listp (car lst)) (mul (car lst) n))
+          ((numberp (car lst)) (cons (* (car lst) n) (mul (cdr lst) n)))
+          (t (cons (car lst) (mul (cdr lst) n)))
+    )
+)

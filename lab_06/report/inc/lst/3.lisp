@@ -1,0 +1,7 @@
+(defun fit(lst)
+      (cond ((null lst) Nil)
+            ((listp (car lst)) (fit (car lst)))
+            ((< 1 (car lst) 10) (cons (car lst) (fit (cdr lst))))
+            (t (fit (cdr lst)))
+      )
+)
